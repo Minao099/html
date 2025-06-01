@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이메일 인증</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+    .left-panel {
+      flex: 1;
+      background: linear-gradient(135deg, #3c0fff, #1c55d1);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px;
+    }
+    .left-panel h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .left-panel p {
+      max-width: 360px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .right-panel {
+      flex: 1;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px;
+    }
+    .form-box {
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    .form-box h2 {
+      margin-bottom: 10px;
+    }
+    .form-box p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .form-box input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    .btn-primary, .btn-skip {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn-primary {
+      background-color: #28a745;
+      color: white;
+    }
+    .btn-skip {
+      background-color: #f1f1f1;
+      color: #333;
+      border: 1px solid #ccc;
+    }
+    .form-box .status {
+      margin-top: 12px;
+      font-size: 14px;
+      text-align: center;
+    }
+    .form-box .status.success {
+      color: green;
+    }
+    .form-box .status.error {
+      color: red;
+    }
+      @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+        height: auto;
+      }
+      .left-panel, .right-panel {
+        flex: unset;
+        width: 100%;
+        padding: 40px 20px;
+      }
+      .left-panel h1 {
+        font-size: 36px;
+      }
+      .left-panel p {
+        text-align: center;
+      }
+      .form-box {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="left-panel">
+    <h1>Email Verification <span style="font-size: 36px">🚀</span></h1>
+    <p>
+      We just sent a verification code to<br>
+      <strong>h33257928@gmail.com</strong><br>
+      Please check your inbox and enter it below.
+    </p>
+  </div>
+  <div class="right-panel">
+    <div class="form-box">
+      <h2>Enter Verification Code</h2>
+      <p>Paste the 6-digit code sent to your email to verify your identity.</p>
+      <form onsubmit="handleVerify(event)">
+        <input type="text" id="code" placeholder="6-digit code" required />
+        <button class="btn-primary" type="submit">Verify</button>
+      </form>
+      <button class="btn-skip" onclick="skipVerification()">Skip</button>
+      <div id="statusMessage" class="status"></div>
+    </div>
+  </div>
+
+  <script>
+    function handleVerify(event) {
+      event.preventDefault();
+      verifyCode();
+    }
+
+    function verifyCode() {
+      const inputCode = document.getElementById("code").value;
+      const status = document.getElementById("statusMessage");
+
+      if (inputCode === "450815") {
+        status.className = "status success";
+        status.textContent = "🎉 인증 성공!";
+        setTimeout(() => {
+          window.location.href = "product.html";
+        }, 1000);
+      } else {
+        status.className = "status error";
+        status.textContent = "❌ 인증번호가 올바르지 않습니다.";
+      }
+    }
+
+    function skipVerification() {
+      window.location.href = "product.html";
+    }
+  </script>
+</body>
+</html>

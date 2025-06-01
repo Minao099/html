@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>세련된 로그인 페이지</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+
+    .left-panel {
+      flex: 1;
+      background: linear-gradient(135deg, #3c0fff, #1c55d1);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px;
+    }
+
+    .left-panel h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .left-panel p {
+      max-width: 360px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .right-panel {
+      flex: 1;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px;
+    }
+
+    .form-box {
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .form-box h2 {
+      margin-bottom: 10px;
+    }
+
+    .form-box p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .form-box input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .form-box input:nth-of-type(1) {
+      animation-delay: 0.2s;
+    }
+
+    .form-box input:nth-of-type(2) {
+      animation-delay: 0.4s;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 14px;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.6s;
+    }
+
+    .btn-google {
+      width: 100%;
+      padding: 14px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.8s;
+    }
+
+    .form-box a {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      color: #007bff;
+      text-decoration: none;
+      margin-top: 10px;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+        height: auto;
+      }
+      .left-panel, .right-panel {
+        flex: unset;
+        width: 100%;
+        padding: 40px 20px;
+      }
+      .left-panel h1 {
+        font-size: 36px;
+        text-align: center;
+      }
+      .left-panel p {
+        text-align: center;
+      }
+      .form-box {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="left-panel">
+    <h1>Hello<br>SaleSkip! <span style="font-size: 36px">👋</span></h1>
+    <p>
+      Skip repetitive and manual sales-marketing tasks.<br>
+      Get highly productive through automation and save tons of time!
+    </p>
+    <p style="position: absolute; bottom: 20px; font-size: 13px; opacity: 0.8">
+      © 2024 SaleSkip. All rights reserved.
+    </p>
+  </div>
+
+  <div class="right-panel">
+    <div class="form-box">
+      <h2>Welcome Back!</h2>
+      <p>Don’t have an account? <a href="sign.html">Create a new account now</a></p>
+      <form onsubmit="handleSubmit(event)">
+        <input type="email" id="email" placeholder="Email" value="h33257928@gmail.com" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button class="btn-primary" type="submit">Login Now</button>
+      </form>
+      <button class="btn-google">Login with Google</button>
+      <a href="#">Forget password? Click here</a>
+      <div id="errorMsg" style="color:red; margin-top:10px;"></div>
+    </div>
+  </div>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      login();
+    }
+
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (email === "h33257928@gmail.com" && password === "Whgusgml1!") {
+        window.location.href = "verify.html";
+      } else {
+        errorMsg.textContent = "Incorrect email or password.";
+      }
+    }
+  </script>
+</body>
+</html>

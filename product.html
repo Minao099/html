@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상품 소개</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafc;
+      color: #333;
+    }
+    header {
+      background: white;
+      padding: 20px 40px;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header img {
+      height: 32px;
+    }
+    .nav {
+      font-size: 14px;
+      color: #666;
+    }
+    .hero-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      background-color: #ffffff;
+    }
+    .hero-top img {
+      max-width: 100%;
+      height: auto;
+    }
+    .card-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+    }
+    .card-box {
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 600px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      cursor: pointer;
+      transition: box-shadow 0.3s;
+    }
+    .card-box:hover {
+      box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+    }
+    .card-box:hover * {
+      cursor: pointer;
+    }
+    .card-title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .card-desc {
+      font-size: 14px;
+      color: #666;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 60px 20px;
+    }
+    .feature {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      width: 260px;
+      transition: transform 0.3s;
+    }
+    .feature:hover {
+      transform: translateY(-8px);
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #f1f3f5;
+      color: #666;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://static.toss.im/3d-emblem/logo-toss.svg" alt="toss logo" />
+    <div class="nav">회사 소개 | 고객센터 | 공지사항</div>
+  </header>
+
+  <section class="hero-top">
+    <img src="/mnt/data/tosspay-kv-mobile-pay-hero-crop.png" alt="결제 이미지" />
+  </section>
+
+  <section class="card-section">
+    <div class="card-box">
+      <div class="card-title">사기 의심 계좌 알림</div>
+      <div class="card-desc">송금 전 상대방 계좌 내역을 조회하여 사기 피해를 미리 방지하세요.</div>
+    </div>
+    <div class="card-box">
+      <div class="card-title">은행 점검 시간 자동이체 예약</div>
+      <div class="card-desc">점검 시간에도 예약만 해두면 시간이 끝나자마자 자동으로 송금됩니다.</div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>📊 자동 리드 분석</h3>
+      <p>고객 데이터를 분석하여 최적의 타겟을 추천합니다.</p>
+    </div>
+    <div class="feature">
+      <h3>⏰ 일정 자동화</h3>
+      <p>미팅 및 전화 일정 예약을 자동으로 처리합니다.</p>
+    </div>
+    <div class="feature">
+      <h3>✉️ 이메일 캠페인</h3>
+      <p>개인화된 이메일을 대량 발송하여 전환율을 높입니다.</p>
+    </div>
+    <div class="feature">
+      <h3>🤖 챗봇 응대</h3>
+      <p>24시간 고객 응대를 자동화하여 CS 효율을 향상합니다.</p>
+    </div>
+    <div class="feature">
+      <h3>📈 실시간 대시보드</h3>
+      <p>성과를 시각화하고 중요한 지표를 실시간 확인하세요.</p>
+    </div>
+    <div class="feature">
+      <h3>🔗 CRM 연동</h3>
+      <p>기존 CRM 시스템과 쉽게 연동되어 데이터 활용을 극대화합니다.</p>
+    </div>
+    <div class="feature">
+      <h3>📦 자동 견적 생성</h3>
+      <p>고객 요청에 따라 자동으로 견적서를 작성해줍니다.</p>
+    </div>
+    <div class="feature">
+      <h3>📞 콜 자동 녹취</h3>
+      <p>상담 콜을 자동 녹취 및 요약하여 관리합니다.</p>
+    </div>
+    <div class="feature">
+      <h3>🧠 AI 학습 기능</h3>
+      <p>사용자 행동을 학습하여 더 똑똑한 영업 자동화를 구현합니다.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2024 SaleSkip. All rights reserved.
+  </footer>
+</body>
+</html>
